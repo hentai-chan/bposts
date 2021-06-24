@@ -1,0 +1,79 @@
+% !TEX spellcheck=en_US
+\documentclass[a4paper]{article}
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage[backend=biber,style=ieee]{biblatex}
+
+% misc macros
+\newcommand*{\pref}[2]{#1 (\ref{#2})}
+
+% microtype
+\SetTracking{encoding={*}, shape=sc}{0}
+
+\addbibresource{bibliography.bib}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    {\scshape\Huge \bfseries{Advanced Systems} \par}
+    \par\vspace{1cm}
+    \includegraphics[width=0.45\textwidth]{images/LLVM_Logo.png}\par
+    \vspace{3cm}
+    {\huge\bfseries The C++ Build Process \par}
+    \vspace{1cm}
+    {\LARGE\itshape Shinonome Mazawa \par}
+    \vspace{1cm}
+    {\large\today\par}
+    \vfill
+    \begin{abstract}
+        If you're a beginner and started to learn C++ very recently, read the chapters
+        Preprocessor, Compiler, Linker, and Conclusions first. For the most part,
+        all definitions and explanations in these chapters are compiler-independent.
+        Come back to this document later after you moved on from writing terminal
+        applications exclusively. The remaining chapters provide additional information
+        by example of LLVM/Clang. See also the Appendix and Bibliography for further
+        reading. 
+    \end{abstract}
+\end{titlepage}
+
+\newpage
+
+\microtypesetup{protrusion=false}
+\tableofcontents
+\microtypesetup{protrusion=true}
+
+\newpage
+
+% === Begin Section Includes ===
+
+\input{sections/introduction}
+
+\input{sections/preprocessor}
+
+\input{sections/compiler}
+
+\input{sections/linker}
+
+\input{sections/llvm}
+
+\input{sections/python-interpreter}
+
+\input{sections/conclusions}
+
+\input{sections/appendix}
+
+% === End Section Includes ====
+
+\newpage
+
+\medskip
+\printbibliography
+
+\end{document}

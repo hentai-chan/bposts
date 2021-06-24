@@ -1,0 +1,21 @@
+\section{Preprocessor}
+
+A preprocessor directive uses the pound character (\path{#}) to designate a
+preprocessor statement. These directives give rise to various events, such as
+
+\begin{itemize}
+    \item file inclusion (\path{#include}) in which the file being processed
+    incorporates the content of another file.
+    \item macro substitution (\path{#define}) to denote a sequence of text that
+    is to be replaced by a definition.
+    \item preprocessor directives (\path{#ifdef} or\footnote{These two are not
+    exactly the same, see also \url{https://stackoverflow.com/questions/135069}.}
+    \path{#if defined}) for introducing conditions under which segments of code
+    shan't compile\footnote{This directive is primarily used for header guards,
+    but it can also be used to denote sections in code that are specific to the
+    operating system, for example \path{#if defined(__ANDROID__)}.}. 
+\end{itemize}
+
+The preprocessor takes precedence over the compiler. Once this step is executed,
+all preprocessor directives are removed from the source file. Files that go through
+this translation process turn into translation units that only exist in memory.

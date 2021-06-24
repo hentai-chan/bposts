@@ -1,0 +1,19 @@
+\section{Conclusions}
+
+While it is not wrong to say that Python is an interpreted language, this is not
+the whole story. The truth is that it is both an interpreted and compiled language.
+Because the PVM interpretates the bytecode instructions line-by-line, it is able
+to immediately react to changes made in the source code, though this interpretation
+step prolongs the program execution.
+
+As opposed to GCC or Clang, the Python interpreter executes bytecode rather than
+machine code instructions. In this case, tradeoffs are made between the time it
+takes to analyze the source code and the overall execution time. Since no intermediate
+object code is generated, Python code is generally slower than compared to statically
+typed languages like C++ because it requires type conversion validation at runtime
+\autocite{zehra2020}. Moreover, since Python facilitates the use of a GC, it takes
+longer for the program to identify and allocate free memory. On top of that, the
+GC is also not thread-safe which is the primary reason why Python requires a GIL.
+Dynamically typed languages in general take longer to execute because they cannot
+employ the benefits of platform-specific machine instructions that were optimized
+for a particular architecture. 

@@ -1,0 +1,47 @@
+\section{Appendix}
+
+This section defines many terms that were previously mentioned but not sufficiently
+explained in alphabetical order.
+
+\begin{itemize}
+    \item \textbf{Constant Folding} is an optimization technique employed by the
+    compiler to evaluate constant expressions at compile-time rather than runtime.
+    For example, arithmetic expressions such as \texttt{int area = 40 * 50;} which
+    will substitute the RHS with the result of this computation, i.e., \texttt{2000}.
+    \item \textbf{Function Inlining} is a compiler optimization that replaces a
+    function call site with the implementation of the function. In contrast, a
+    macro substitution takes place one step earlier, during the preprocessor stage
+    which effectively changes the source code processed by the compiler in memory.
+    \item \textbf{IPA} (Interprocedural Analysis) is a mechanism that performs
+    optimizations across the whole program which includes, among other things: CS
+    (Code Straightening), PP (Program Partitioning), IPAA (Interprocedural Pointer
+    Alias Analyses), ICP (Interprocedural Copy Propagation). Generally speaking,
+    it refers to gathering information about the entire program instead of a single
+    procedure.
+    \item \textbf{IPO} (Interprocedural Optimization) is an automatic multi-step
+    process that employs the compiler to analyze and assess which optimizations
+    the code could benefit from. The compiler can choose from a variety of
+    optimization techniques\footnote{This is a non-exhaustive list of optimizations
+    that is available to the compiler.}: ADP (Array Dimension Padding), CP (Common
+    Propagation), PDCE (Partial Dead Call Elimination), WPA (Whole Program Analysis).
+    As opposed to IPA, it concerns itself with program transformations that involve
+    more than one procedure in a program.
+    \item \textbf{LTO} (Link Time Optimization) is a method for achieving better
+    runtime performance through whole-program analysis and cross-module optimization.
+    During the compile phase, Clang will emit LLVM bitcode files and invokes LLVM
+    during the link to generate the final objects that will constitute the executable.
+    The LLVM implementation loads all input bitcode files and merges them together
+    to produce a single Module. The interprocedural analysis (IPA) as well as the
+    interprocedural optimizations (IPO) are performed serially on this monolithic
+    module \autocite{johnson2016}.
+    \item \textbf{NRVO} (Named Return Value Optimization) is a compiler optimization
+    that can remove instantiated intermediary objects that are unique. The compiler
+    is able to apply this technique if it is able to determine an object's memory
+    location inside a function where all paths return a unique object.
+    \item \textbf{Peephole Optimization} is a compiler optimization technique that
+    takes a small set of compiler-generated instructions (dicitur peephole) and
+    replaces it with a functionally equivalent, but more performant set of instructions.
+    \item \textbf{RVO} (Return Value Optimization) is a compiler optimization that
+    involves eliminating the temporary object created to hold a function's return
+    value.
+\end{itemize}

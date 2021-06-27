@@ -1,0 +1,77 @@
+% !TEX spellcheck=en_US
+\documentclass[a4paper]{article}
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage[backend=biber,style=ieee]{biblatex}
+
+% misc macros
+\newcommand*{\pref}[2]{#1 (\ref{#2})}
+
+% microtype
+\SetTracking{encoding={*}, shape=sc}{0}
+
+\addbibresource{bibliography.bib}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    {\scshape\Huge \bfseries{Advanced Systems} \par}
+    \par\vspace{1cm}
+    \includegraphics[width=0.35\textwidth]{images/cpp-logo.png}\par
+    \vspace{3cm}
+    {\huge\bfseries C++ Project Management \par}
+    \vspace{1cm}
+    {\LARGE\itshape Shinonome Mazawa \par}
+    \vspace{1cm}
+    {\large\today\par}
+    \vfill
+    \begin{abstract}
+        TODO
+    \end{abstract}
+\end{titlepage}
+
+\newpage
+
+\microtypesetup{protrusion=false}
+\tableofcontents
+\microtypesetup{protrusion=true}
+
+\newpage
+
+% === Begin Section Includes ===
+
+\input{sections/introduction}
+
+% \input{sections/licenses}
+
+\input{sections/dir-file-names}
+
+% \input{sections/devtools}
+
+% \input{sections/pitchfork}
+
+\input{sections/workflow}
+
+% \input{sections/dev-ops}
+
+% \input{sections/commit-msg}
+
+% \input{sections/commit-msg}
+
+% \input{sections/communication}
+
+% === End Section Includes ====
+
+\newpage
+
+\medskip
+\printbibliography
+
+\end{document}

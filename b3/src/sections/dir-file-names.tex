@@ -1,0 +1,42 @@
+\section{Directory and File Names}
+
+Even though this may seem like a trivial matter at first, there are a few rules
+one needs to follow to not run into any cross-platform compatibility issues. In
+fact, not complying to these rules willingly may sometimes cause security issues
+as any shell metacharacter\footnote{Characters that must be escaped in a shell
+script before they can be used as an ordinary character are termed shell metacharacters.}
+in a filename will be executed (unescaped) by another shell script \autocite{wheeler2020}
+\autocite{marti2014}. See also \url{https://en.wikipedia.org/wiki/Filename} for
+a comprehensive list of filename limitations put in place by various operating
+systems. In general, prefer UTF-8 encoded lowercase filenames across a file systems.
+Using white space characters in directory and filenames is also better to be avoided
+because many Unix/Linux shell scripts presume that there are no white space characters
+in filenames. For instance, in June of 2021, Microsoft's Ubuntu repositories broke
+due to white spaces filenames \autocite{jarina2021}. Moreover, the POSIX standard
+may reserve a subset of all possible filenames that consists of identifiers that
+begin with an underscore and continue with either another underscore or a capital
+letter in the global namespace. The class of names that contains all names matching
+this restriction can be expressed by the following regular expression \autocite{oracle2010}:
+\path{_[_A-Z][0-9_a-zA-Z]*}. For similar reasons, you should never use a hyphen
+as the first character in a filename because by convention, programs accepts their
+options as their first argument, usually preceded by a dash \autocite{unixhater1994}.
+On top of that, Windows also reserves a list of filenames for internal use only:
+
+\begin{itemize}
+    \item \texttt{CON}
+    \item \texttt{AUX}
+    \item \texttt{NUL}
+    \item \texttt{COM1}, \texttt{COM2}, \texttt{COM3}, \texttt{COM4}, \texttt{COM5}, \texttt{COM6},
+          \texttt{COM7}, \texttt{COM8}, \texttt{COM9}
+    \item \texttt{LPT1}, \texttt{LPT2}, \texttt{LPT3}, \texttt{LPT4}, \texttt{LPT5}, \texttt{LPT6},
+          \texttt{LPT7}, \texttt{LPT8}, \texttt{LPT9}
+\end{itemize}
+
+This limitation also applies to lowercase deviations of these filenames followed
+by an extension \autocite{microsoft2020a}. Finally, using short and concise filenames
+is also strongly encouraged to comply with Windows' default maximum path length
+of 260 characters (as opposed to Linux' maximum path length of 4096 characters on
+most prominent distributions). While it is possible to opt into long paths to lift
+this limitation on Windows starting with Windows 10 (Version 1607 and later
+\autocite{microsoft2020b}), it is not reasonable to assume that end-users have
+enabled this feature on their machine.

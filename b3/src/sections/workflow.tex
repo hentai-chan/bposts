@@ -1,0 +1,45 @@
+\section{GitHub Workflow}
+
+Over the years a successful development model has emerged, at the center of which
+stands the idea to use two persistent branches for the entire life span of a project.
+The \texttt{main} branch at \texttt{origin} (formerly denoted by \texttt{master})
+reflects a production-ready state of the source code that is also used to deploy
+the latest version of an executable or library. Its next to kin is known by more
+by one name and represents successive versions of release candidates that are
+currently in development. Changes made to this branch should give continual assurance
+that code and environment operate as designed and are always in a good and deployable
+state \autocite{devops2016}. Some good names for this secondary branch are
+
+\begin{itemize}
+    \item \texttt{dev}
+    \item \texttt{development}
+    \item \texttt{integration}
+    \item \texttt{future}
+\end{itemize}
+
+The GitHub workflow envisages that new, short-lived feature/topic branches use
+this secondary branch as both a basis and a target for pull requests. To ensure
+that features and patches find their way quickly into the \texttt{main} branch,
+a strategy has been devised through trial and failure by many open-source software
+communities. Note that while all branches converge towards a common future, there
+are a few exceptions to this rule. GitHub pages, for example, uses a special branch
+(\texttt{gh-pages}) for hosting static websites, though this is a less common
+occurrence in C++ projects.
+
+Automatic test runs encourage a culture of early feedback and vivid communication
+in code reviews between developers when it matters the most. This is especially
+crucial in multidisciplinary projects where it is important to bring collaborators
+from various fields early on together in order to progress and mature in an environment
+that makes allowances for mistakes. Reducing friction in this stage has a positive
+effect on the productivity of the team, but also decreases the time and cost for
+future deployments. This is another side effect of moving testing and InfoSec
+activities to earlier lines of work.
+
+Continuous integration providers such as GitHub Actions and AppVeyor allow open-source
+project maintainers to build, test and deploy applications on virtual machines at
+zero-cost. They can be added as required passes to pull requests to verify that
+new submissions meet a pre-defined set of conditions before they go through a code
+review. Since these jobs can target multiple operating systems and architectures,
+testing cross-platform support has become much easier than in the past. CI scripts
+can also be used to perform a wide range of additional tests such as static code
+analysis, test coverage or code quality appraisal.

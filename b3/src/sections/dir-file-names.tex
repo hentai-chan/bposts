@@ -8,7 +8,7 @@ script before they can be used as an ordinary character are termed shell metacha
 in a filename will be executed (unescaped) by another shell script \autocite{wheeler2020}
 \autocite{marti2014}. See also \url{https://en.wikipedia.org/wiki/Filename} for
 a comprehensive list of filename limitations put in place by various operating
-systems. In general, prefer UTF-8 encoded lowercase filenames across a file systems.
+systems. In general, prefer UTF-8 encoded lowercase filenames across all file systems.
 Using white space characters in directory and filenames is also better to be avoided
 because many Unix/Linux shell scripts presume that there are no white space characters
 in filenames. For instance, in June of 2021, Microsoft's Ubuntu repositories broke
@@ -26,10 +26,10 @@ On top of that, Windows also reserves a list of filenames for internal use only:
     \item \texttt{CON}
     \item \texttt{AUX}
     \item \texttt{NUL}
-    \item \texttt{COM1}, \texttt{COM2}, \texttt{COM3}, \texttt{COM4}, \texttt{COM5}, \texttt{COM6},
-          \texttt{COM7}, \texttt{COM8}, \texttt{COM9}
-    \item \texttt{LPT1}, \texttt{LPT2}, \texttt{LPT3}, \texttt{LPT4}, \texttt{LPT5}, \texttt{LPT6},
-          \texttt{LPT7}, \texttt{LPT8}, \texttt{LPT9}
+    \item \texttt{COM1}, \texttt{COM2}, \texttt{COM3}, \texttt{COM4}, \texttt{COM5},
+          \texttt{COM6}, \texttt{COM7}, \texttt{COM8}, \texttt{COM9}
+    \item \texttt{LPT1}, \texttt{LPT2}, \texttt{LPT3}, \texttt{LPT4}, \texttt{LPT5},
+          \texttt{LPT6}, \texttt{LPT7}, \texttt{LPT8}, \texttt{LPT9}
 \end{itemize}
 
 This limitation also applies to lowercase deviations of these filenames followed

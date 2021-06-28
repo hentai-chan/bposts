@@ -1,0 +1,30 @@
+\section{DevOps Principles}
+
+In DevOps\footnote{The term DevOps was first coined by Patrick Debois in 2009 during
+the first DevOpsDays in Ghent, Belgium.}, the term value stream is defined as the
+process required to convert a business hypothesis into a technology-enabled service
+that delivers value to the customer. One key point to take away from the three ways
+is to turn our attention to reducing the overall lead time throughout the development
+cycle. After all, the proportion of process time to lead time serves as an important
+measure of efficiency. To enable fast flow and high quality, small batches of work
+going through the design/development and tests/operations value stream should be
+favored over big and potentially disruptive changes because value generation only
+starts once code passes the UAT (User Acceptance Test) in an production environment.
+A core tenet of virtually all modern process improvements is to continually shorten
+and amplify our feedback loops. As complex tasks suffer greatly from multitasking,
+incurring all costs of re-establishing context as well as cognitive rules and goals,
+it is recommended to implement a limit by codifying and enforcing an upper bound
+for WIP for each work center \autocite{devops2016}.
+
+\begin{enumerate}
+    \item Ready
+    \item Investigate
+    \item In Progress
+    \item Done
+    \item UAT
+    \item Delivered
+\end{enumerate}
+
+% NOTE: an illustration would work great wonders here!
+Reducing the batch size of each ticket that goes through this cycle results in
+faster lead times nd error detection, but also less WIP and rework.
